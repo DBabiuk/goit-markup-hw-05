@@ -201,7 +201,7 @@ footer {
   line-height: 1.15;
   letter-spacing: 0.02em;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 .navigation-footer {
   font-weight: normal;
@@ -531,12 +531,21 @@ header {
 }
 
 .mail:hover,
-.phone:hover {
+.phone:hover,
+.mail:focus svg,
+.phone:focus svg {
   color: var(--brand-color);
   fill: var(--brand-color);
 }
 .phone,
 .mail {
+  transition-property: fill, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+}
+.phone svg,
+.mail svg{
   transition-property: fill, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -550,6 +559,12 @@ header {
 }
 .worker-icons svg {
   fill: #afb1b8;
+}
+.worker-icons-background svg{
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
 }
 .worker-icons-background {
   width: 44px;
@@ -571,6 +586,12 @@ header {
 .worker-icons-background:hover svg {
   fill: #ffffff;
 }
+.worker-icons-background:focus{
+  background-color: var(--brand-color)
+}
+.worker-icons-background:focus svg {
+  fill: #ffffff;
+}
 .worker-icons li {
   margin-right: 10px;
 }
@@ -586,13 +607,14 @@ header {
 .clients-cards li:last-child {
   margin-right: 0px;
 }
-.client-wrapper:hover {
+.client-wrapper:hover,
+.client-wrapper:focus {
   border: 1px solid var(--brand-color);
 }
-.client-wrapper:hover svg {
+.client-wrapper:hover svg,
+.client-wrapper:focus svg {
   fill: var(--brand-color);
 }
-
 .clients {
   text-align: center;
 }
