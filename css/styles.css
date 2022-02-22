@@ -37,8 +37,12 @@ img {
 }
 .navigation-footer li a:hover,
 .navigation-header li a:hover,
-.contacts-header li a:hover {
+.contacts-header li a:hover,
+.navigation-footer li a:focus svg,
+.navigation-header li a:focus svg,
+.contacts-header li a:focus svg {
   color: var(--brand-color);
+  fill: var(--brand-color);
 }
 .navigation-footer li a,
 .navigation-header li a,
@@ -201,7 +205,7 @@ footer {
   line-height: 1.15;
   letter-spacing: 0.02em;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 .navigation-footer {
   font-weight: normal;
@@ -529,14 +533,19 @@ header {
 .phone-icon {
   margin-right: 10px;
 }
-
-.mail:hover,
-.phone:hover,
+.phone-icon,
+.mail-icon{
+  fill: var(--common-text-color);
+}
+.mail:hover svg,
+.phone:hover svg,
 .mail:focus svg,
 .phone:focus svg {
   color: var(--brand-color);
   fill: var(--brand-color);
 }
+
+
 .phone,
 .mail {
   transition-property: fill, color;
@@ -561,7 +570,7 @@ header {
   fill: #afb1b8;
 }
 .worker-icons-background svg{
-  transition-property: fill;
+  transition-property: fill, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
@@ -615,10 +624,22 @@ header {
 .client-wrapper:focus svg {
   fill: var(--brand-color);
 }
+.client-wrapper-href{
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+}
+.client-wrapper-href:focus{
+  border: 1px solid var(--brand-color);
+}
+.client-wrapper-href:focus svg{
+fill: var(--brand-color);
+}
 .clients {
   text-align: center;
 }
-.client-wrapper {
+.client-wrapper a {
   width: 170px;
   height: 92px;
   display: flex;
@@ -630,7 +651,7 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
 }
-.client-wrapper svg {
+.client-wrapper a svg {
   fill: #afb1b8;
 
   transition-property: fill;
@@ -673,7 +694,8 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0;
 }
-.footer-svg-container:hover {
+.footer-svg-container:hover,
+.footer-svg-container:focus {
   background-color: var(--brand-color);
 }
 /* .footer-svg-container {
@@ -711,7 +733,7 @@ margin-right: 0px;
   color: #ffffff;
 }
 
-.portfolio:hover .overlay {
+.portfolio a:hover .overlay {
   transform: translateY(0);
 }
 .overlay {
